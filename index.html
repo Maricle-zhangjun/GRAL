@@ -424,7 +424,7 @@
                 <div class="columns is-centered">
                     <div class="column has-text-centered", style="background-color: #ffffff;">
                         <div class="title-text">
-                            <p class="title-text">Generalizable and Robust Affordance Learning<br>for Robotic Garment Manipulation under Background Camouflage</p>
+                            <p class="title-text">Depth-Enhanced One-Shot Affordance Learning<br>for Robotic Garment Manipulation under Background Camouflage</p>
                         </div>
                         <!-- <div class="image-viewport2">
                             <img width="75%" src="static/imgs/title_large.png" alt="Robotic Visual Instruction">
@@ -497,11 +497,11 @@
         </header>
     </div>
 
-    <div class="container is-max-widescreen" style="padding: 0px; margin-top: 20px;">
+    <!-- <div class="container is-max-widescreen" style="padding: 0px; margin-top: 20px;">
         <video controls style="width: 100%; border-radius: 15px; aspect-ratio: 16/9; background-color: #666;">
             <source src="https://github.com/Maricle-zhangjun/GRAL/releases/download/demo/GRAL_Video.mp4" type="video/mp4">
         </video>
-    </div>
+    </div> -->
     <div style="width: 100vw; background-color: #ffffff;">
         <div class="container" style="background-color: #ffffff;">
             <h1 class="title is-4 has-text-left has-text-weight-bold" style="padding-top: 20px;">Motivation</h1>
@@ -517,20 +517,20 @@
             <p class="is-size-5 has-text-left">
                 Robotic garment manipulation under background camouflage remains challenging, as garments often share similar colors and textures with their surrounding environment, leading to severe visual ambiguity and unreliable perception. 
                 While affordance learning provides a promising paradigm for inferring actionable regions, existing methods typically rely on large-scale annotations and struggle to generalize to unseen garments. 
-                To address this limitation, we adopt a <strong>one-shot affordance learning paradigm</strong> to enable data-efficient generalization. 
-                However, accurate affordance prediction alone is insufficient for reliable garment manipulation, as traditional methods directly selecting the maximum affordance point without considering geometric feasibility often results in unstable grasps, especially on local flat garment regions. 
-                Therefore, we further design an <strong>affordance-guided manipulation strategy</strong> that incorporates geometric awareness to ensure physically feasible and stable execution. 
-                Building upon these insights, we propose a <strong>Generalizable and Robust Affordance Learning (GRAL) framework </strong>for robotic garment manipulation that integrates robust action primitive affordance learning with geometry-aware manipulation strategy, and further construct a Sim-Garment dataset with diverse garment categories and complex background textures to support systematic evaluation. 
-                Extensive experiments in both simulation and real-world settings demonstrate that our method significantly improves robustness and generalization, achieving average success rates of 74.29% and 65.71% for garment manipulation tasks. 
-                Code and Dataset will be open-sourced after the paper is accepted.
+                To address this limitation, we adopt a one-shot affordance learning paradigm to enable data-efficient generalization. However, accurate affordance prediction alone is insufficient for reliable garment manipulation, as traditional methods directly selecting the maximum affordance point without considering geometric feasibility often results in unstable grasps, especially on local flat garment regions. 
+                Therefore, we further design an affordance-guided manipulation strategy that incorporates geometric awareness to ensure physically feasible and stable execution. 
+                Building upon these insights, we propose a Depth-Enhanced One-Shot Affordance Learning framework (DE-OSAL) for robotic garment manipulation that integrates robust action primitive affordance learning with geometry-aware manipulation strategy, 
+                and further construct a Sim-Garment dataset with diverse garment categories and complex background textures to support systematic evaluation. 
+                Extensive experiments in both simulation and real-world settings demonstrate that our method significantly improves affordance prediction accuracy and manipulation stability, achieving average success rates of 74.29% and 65.71% for garment manipulation tasks. 
+                Experimental results further indicate that the proposed DE-OSAL method exhibits strong generalization to unseen garment categories and robustness to real-world sensing noise, validating the effectiveness of depth-enhanced multimodal fusion for reliable garment manipulation. Code and Dataset will be open-sourced after the paper is accepted.
             </p>
             <br>
-            <h1 class="title is-4 has-text-left has-text-weight-bold">Overview of GRAL framework</h1>
+            <h1 class="title is-4 has-text-left has-text-weight-bold">Overview of DE-OSAL framework</h1>
             <div class="image-viewport" style="display: flex; justify-content: center;">
                 <img src="static/imgs/overview.png" style="width: 100%;">   
             </div>
             <p class="is-size-6 has-text-left" style="margin-top: 10px;">
-                Figure 2. Overview of the proposed GRAL framework. Given RGB-D input, OS-APAL learns multimodal representations through geometric-semantic fusion and action prompt-driven feature alignment, enabling robust affordance prediction under background camouflage. 
+                Figure 2. Overview of the proposed DE-OSAL framework. Given RGB-D input, APAL learns multimodal representations through geometric-semantic fusion and action prompt-driven feature alignment, enabling robust affordance prediction under background camouflage. 
                 Based on the predicted affordance, the affordance-guided manipulation strategy further incorporates geometric cues to refine candidate grasp regions and select stable grasp points, which are then transformed into executable robot actions for reliable garment manipulation across diverse tasks through composing predefined action primitives.
             </p>
             <br>
